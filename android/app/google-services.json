@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "870705367732",
+    "project_id": "osoncor-c86b7",
+    "storage_bucket": "osoncor-c86b7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870705367732:android:1f7a18131d320ec11465e1",
+        "android_client_info": {
+          "package_name": "com.osongroup.osoncor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870705367732-stoh5sbh5e95gf70ijgcuu9328s3afao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.osongroup.osoncor",
+            "certificate_hash": "56301d2f3a198ff2b746db4b11b3af5ad9e18a5b"
+          }
+        },
+        {
+          "client_id": "870705367732-fmgson88294l7q1dhf9b6s8a7og4vrmv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJ0O-mspOscww3qJSHpw22MBIe073JhhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870705367732-fmgson88294l7q1dhf9b6s8a7og4vrmv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "870705367732-gmdhv3u6q1mkla9gt20qr541i1ffv2hi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.osongroup.osoncor"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
