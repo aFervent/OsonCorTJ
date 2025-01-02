@@ -130,7 +130,7 @@ String language(context, text) {
 }
 
 bool rtl(context) {
-  return AppLocalizations.of(context)?.locale.languageCode == "ar";
+  return AppLocalizations.of(context)?.locale.languageCode == "ru";
 }
 
 bool isDark(context) {

@@ -29,11 +29,11 @@ class JobRequestServiceDescription extends StatelessWidget {
                     subtitle: "AC Repair")
                 .paddingOnly(
                     left: AppLocalizations.of(context)?.locale.languageCode ==
-                            "ar"
+                            "ru"
                         ? 0
                         : Insets.i20,
                     right: AppLocalizations.of(context)?.locale.languageCode ==
-                            "ar"
+                            "ru"
                         ? 0
                         : Insets.i20),
           )

@@ -7,6 +7,7 @@ import 'ar.dart';
 import 'en.dart';
 import 'es.dart';
 import 'fr.dart';
+import 'ru.dart';
 
 
 class AppLocalizations {
@@ -29,7 +30,8 @@ class AppLocalizations {
     'en': en,
     'fr': fr,
     'es': es,
-    'ar': ar
+    'ar': ar,
+    'ru': ru,
   };
   String translate(String key) {
     return _localizedValues[locale.languageCode]?[key] ?? key;
@@ -42,7 +44,7 @@ class AppLocalizationDelagate extends LocalizationsDelegate<AppLocalizations> {
   @override
   bool isSupported(Locale locale) {
 
-    return  ['en', 'fr', 'es', 'ar'].contains(locale.languageCode);
+    return  ['en', 'fr', 'es', 'ar', 'ru'].contains(locale.languageCode);
   }
 
   @override

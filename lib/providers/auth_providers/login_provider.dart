@@ -151,6 +151,8 @@ class LoginProvider with ChangeNotifier {
           await commonApi.selfApi(context);
 
           dynamic userData = pref!.getString(session.user);
+          print("SESSIONUSERDATA $session");
+          log("USERDATA :%sss$userData");
           if (userData != null) {
 
             final locationCtrl =

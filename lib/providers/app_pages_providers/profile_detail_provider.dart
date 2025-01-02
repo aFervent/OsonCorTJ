@@ -107,7 +107,7 @@ class ProfileDetailProvider with ChangeNotifier {
             filename: imageFile!.name.toString(),
             contentType: MediaType(mimeTypeData[0], mimeTypeData[1])),
     };
-
+    print("BOOODDYY ${body}");
     dio.FormData formData = dio.FormData.fromMap(body);
 
     try {

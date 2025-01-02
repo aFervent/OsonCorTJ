@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fixit_user/config.dart';
@@ -30,22 +31,60 @@ class ProfileProvider with ChangeNotifier {
       profileLists =
           appArray.profileList.map((e) => ProfileModel.fromJson(e)).toList();
       getUserDetail();
+      //print("getUSERDETAILS");
     }
 
+
   }
+
+  // getUserDetail() async {
+  //   preferences = await SharedPreferences.getInstance();
+  //   isGuest  = preferences!.getBool(session.isContinueAsGuest) ?? false;
+  //   //Map user = json.decode(preferences!.getString(session.user)!);
+  //   if(!isGuest){
+  //     print("getUSERDETAILS ${preferences!.getString(session.user).toString()}");
+  //     userModel =
+  //         UserModel.fromJson(
+  //             json.decode(preferences!.getString(session.user)!));
+  //     print("SESSIONUSER ${preferences!.getString(session.user)}");
+  //
+  //   }
+  //
+  //   notifyListeners();
+  // }
 
   getUserDetail() async {
     preferences = await SharedPreferences.getInstance();
-    isGuest  = preferences!.getBool(session.isContinueAsGuest) ?? false;
-    //Map user = json.decode(preferences!.getString(session.user)!);
-    if(!isGuest){
-      userModel =
-          UserModel.fromJson(
-              json.decode(preferences!.getString(session.user)!));
+
+    // Прочитаем флаг isGuest
+    isGuest = preferences!.getBool(session.isContinueAsGuest) ?? false;
+
+    // Логируем значение isGuest
+    print("isGuest: $isGuest");
+
+    // Если не гость, пытаемся загрузить модель пользователя
+    if (!isGuest) {
+      // Логируем, что мы пытаемся загрузить данные пользователя
+      String? userJson = preferences!.getString(session.user);
+      print("userJson: $userJson");
+
+      if (userJson != null && userJson.isNotEmpty) {
+        try {
+          // Десериализуем данные пользователя
+          userModel = UserModel.fromJson(json.decode(userJson));
+          print("USER MODEL: $userModel");
+        } catch (e) {
+          print("Error decoding user data: $e");
+        }
+      } else {
+        print("User data is null or empty");
+      }
     }
 
+    // Уведомляем слушателей, что данные обновились
     notifyListeners();
   }
+
 
   animateDesign(TickerProvider sync) {
     Future.delayed(DurationClass.s1).then((value) {
